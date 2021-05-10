@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PostsModule } from './posts/posts.module';
 import { DatabaseModule } from './database/database.module';
 import { UsersService } from './users/users.service';
+import { UsersModule } from './users/users.module';
 import * as Joi from '@hapi/joi';
 
 @Module({
@@ -17,8 +18,9 @@ import * as Joi from '@hapi/joi';
         PORT: Joi.number(),
       })
     }),
-    DatabaseModule],
+    DatabaseModule,
+    UsersModule],
   controllers: [],
-  providers: [UsersService],
+  providers: [],
 })
 export class AppModule {}
